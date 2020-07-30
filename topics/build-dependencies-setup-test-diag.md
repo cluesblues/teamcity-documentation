@@ -87,7 +87,7 @@ Now, let's see what you can do with artifact and snapshot dependencies, and how 
 An _artifact dependency_ allows reusing the output of one build (or a part of it) in another.
  
  
-<img src="artifactDependency-test.png" width="150"/>
+<img src="artifactDependency-test.png"/>
 
 
 If build configuration __A__ has an artifact dependency on __B__, then the artifacts of __B__ are downloaded to a build agent before a build of __A__ starts. Note that you can flexibly adjust [artifact rules](artifact-dependencies.md) to configure which artifacts should be taken and where exactly they should be placed.    
