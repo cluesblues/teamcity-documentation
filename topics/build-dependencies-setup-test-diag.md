@@ -24,7 +24,7 @@ Generally known as the _build pipeline_, in TeamCity a similar concept is referr
 <table>
 
 <tr>
-<td width="150px"></td>
+<td></td>
 <td></td>
 </tr>
 
@@ -32,7 +32,7 @@ Generally known as the _build pipeline_, in TeamCity a similar concept is referr
 
 <td>
 
-<img src="buildConfiguration-test.png" width="70"/>
+<img src="buildConfiguration-test.png"/>
 
 </td>
 
