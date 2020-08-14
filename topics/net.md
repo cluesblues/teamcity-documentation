@@ -7,7 +7,7 @@ This page gives details on configuring the _.NET_ runner.
 
 <note>
 
-Since TeamCity 2019.2.3, the .NET CLI (dotnet) build runner has been refactored and renamed to __.NET__ thus emphasizing that now it supports all .NET-related operations previously implemented in TeamCity as multiple [build runners](#custom-commands).
+Since TeamCity 2019.2.3, the .NET CLI (dotnet) build runner has been refactored and renamed to __.NET__ thus emphasizing that now it supports all .NET-related operations previously implemented in TeamCity as multiple [build runners](#working-directory).
 
 Note that we stop providing active support for the [MSBuild](msbuild.md), [Visual Studio (sln)](visual-studio-sln.md), [Visual Studio 2003](visual-studio-2003.md), and [Visual Studio Tests](visual-studio-tests.md) runners. These runners are left for compatibility of existing build configurations with new versions of TeamCity. To receive the following updates and use extra features of our .NET implementation, we suggest that you select the .NET runner instead of any of the listed runners in all corresponding build steps. This page describes the settings of all supported .NET commands and gives guidelines on migration from the obsolete build runners.
 
@@ -129,8 +129,7 @@ Currently, the .NET runner supports the following commands:
   
 \* _`msbuild` and `vstest` are executed as [CLI commands](https://docs.microsoft.com/en-us/dotnet/core/tools/) if cross-platform .NET SDK is used for building a project. Otherwise, they are run using the `msbuild` or `VSTest.Console` tool respectively._
 
-<p id="custom-command">Alternatively, you can specify any __[custom .NET command](#Custom+Commands)__, and TeamCity will run it _as is_.
-</p>
+Alternatively, you can specify any __[custom .NET command](#Custom+Commands)__, and TeamCity will run it _as is_.
 
 ### Basic Commands
 
