@@ -129,7 +129,8 @@ Currently, the .NET runner supports the following commands:
   
 \* _`msbuild` and `vstest` are executed as [CLI commands](https://docs.microsoft.com/en-us/dotnet/core/tools/) if cross-platform .NET SDK is used for building a project. Otherwise, they are run using the `msbuild` or `VSTest.Console` tool respectively._
 
-{id="custom-command"}Alternatively, you can specify any __[custom .NET command](#Custom+Commands)__, and TeamCity will run it _as is_.
+Alternatively, you can specify any __[custom .NET command](#Custom+Commands)__, and TeamCity will run it _as is_.
+{id="custom-command"}
 
 ### Basic Commands
 
