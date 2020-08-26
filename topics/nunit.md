@@ -76,7 +76,9 @@ Description
 
 </td></tr><tr>
 
-<td id="runner">
+<td id="NUnit-runner">
+
+<an
 
 NUnit runner
 
@@ -88,7 +90,7 @@ Select the NUnit version to be used to run the tests. The set of available setti
 
 </td></tr><tr>
 
-<td id="pathToNUnitConsoleTool">
+<td id="NUnit-pathToNUnitConsoleTool">
 
 NUnit Console
 
@@ -104,7 +106,7 @@ Select a preinstalled console tool or specify a custom path to `nunit3-console.e
 
 </td></tr><tr>
 
-<td id="workingDirectory">
+<td id="NUnit-workingDirectory">
 
 Working directory
 
