@@ -122,6 +122,8 @@ Specify the path to the [build working directory](build-working-directory.md) if
 
 <td id="appConfigFile">
 
+<anchor name="NUnit-appConfigFile"/>
+
 Path to application configuration file
 
 </td>
