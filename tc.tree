@@ -26,6 +26,7 @@
          <toc-element id="difference-viewer.md"/>
          <toc-element id="project.md" show-structure-for="chapter" show-structure-depth="4"/>
          <toc-element id="build-agent.md" show-structure-for="chapter" show-structure-depth="4"/>
+         <toc-element id="agentless-builds.md" show-structure-for="chapter" show-structure-depth="4"/>
          <toc-element id="agent-home-directory.md" show-structure-for="chapter" show-structure-depth="4"/>
          <toc-element id="agent-requirements.md"/>
          <toc-element id="agent-work-directory.md"/>
