@@ -8,11 +8,11 @@ This case is optimal for configurations that use third-party tools for finalizin
 
 Let's compare a regular build that consists of three steps. All of them depend on an agent even though the deployment step is actually performed by the external software.
 
-<img src="../images/agent-depend-build.png" width="70%" alt="Regular build"/>
+<img src="../images/agent-depend-build.png" alt="Regular build"/>
 
 With the agentless approach, the agent does not need to handle the final step. The TeamCity server will catch the reports directly from the external tool.
 
-<img src="../images/agentless-build.png" width="70%" alt="Agentless build"/>
+<img src="../images/agentless-build.png" alt="Agentless build"/>
 
 ## Detaching build agent
 
