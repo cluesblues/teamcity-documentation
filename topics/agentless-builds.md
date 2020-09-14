@@ -28,12 +28,12 @@ Service messages are supported inside the REST API request data.
 Agentless builds can receive logs from external tools via [TeamCity REST API](rest-api.md).
 
 To perform requests, you need to use [build-level authentication](artifact-dependencies.md#Build-level+authentication) credentials. Please use the following predefined build system properties for your requests:
-* `%system.teamcity.serverUrl%`
 * `%system.teamcity.auth.userId%`
 * `%system.teamcity.auth.password%`
 
 You also need to specify the [build ID](working-with-build-results.md#Internal+Build+ID) and server URL:
 * `%system.teamcity.build.id%`
+* `%system.teamcity.serverUrl%`
 
 Use the following call to log messages:
 
