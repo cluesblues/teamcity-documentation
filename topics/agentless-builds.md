@@ -16,7 +16,7 @@ With the agentless approach, the agent does not need to handle the final step. T
 
 ## Detaching build agent
 
-To release its current build agent, a build needs to send the `##teamcity[buildDetachedFromAgent]` [service message](service-messages.md). We highly recommend detaching a build from the agent only during its last step. Make sure this step does not require the agent and can be performed outside of TeamCity.  
+To release its current build agent, a build needs to send the `##teamcity[detachedFromAgent]` [service message](service-messages.md). We highly recommend detaching a build from the agent only during its last step. Make sure this step does not require the agent and can be performed outside of TeamCity.  
 TeamCity will skip all the following steps after the build is detached, unless they have the "[Always, even if build stop command was issued](configuring-build-steps.md#Execution+policy)" option enabled. You can enable it for mandatory final steps – the agent will be released only after completing them.
 
 After being released, the agent becomes available to other builds. The server will receive and log all remaining build status information received from the third-party tool.
