@@ -35,16 +35,30 @@ You also need to specify the [build ID](working-with-build-results.md#Internal+B
 * `%system.teamcity.build.id%`
 * `%system.teamcity.serverUrl%`
 
-Use the following call to log messages:
+Use the following call to __log messages__:
 
 ```shell script
 POST /app/rest/runningBuilds/id:<build_id>/log 
 (curl -v --basic --user <username>:<password> --request POST http://<teamcity.url>/app/rest/runningBuilds/id:<build_id>/log --data <message> --header "Content-Type: text/plain")
 ```
 
-Here, you can send the ["detach" service message](#Detaching+build+agent) as `<message>`.
+Here, you can send the ["detach"](#Detaching+build+agent) or any other service message as `<message>`.
 
-Use the following call to finish the build:
+An example request to detach a build from an agent:
+
+```shell script
+POST /app/rest/runningBuilds/id:TestBuild/log 
+(curl -v --basic --user johnsmith:password1 --request POST http://localhost:8111/app/rest/runningBuilds/id:TestBuild/log --data ##teamcity[detachedFromAgent] --header "Content-Type: text/plain")
+```
+
+
+<tip>
+  
+To structure service messages in the build log, use [`flow tracking`](service-messages.md#Message+FlowId).
+  
+</tip>
+
+Use the following call to __finish a build__:
 
 ```shell script
 PUT /app/rest/runningBuilds/id:<build_id>/finishDate
@@ -57,4 +71,4 @@ Without the finishing request, the build will be running on the TeamCity server 
 
 ## Agentless builds' licensing
 
-The number of agentless builds allowed on the server equals the number of licensed agents.
+The number of agentless builds allowed on the server is yet to be determined during the EAP.
