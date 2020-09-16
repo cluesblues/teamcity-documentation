@@ -38,17 +38,17 @@ You also need to specify the [build ID](working-with-build-results.md#Internal+B
 Use the following call to __log messages__:
 
 ```shell script
-POST /app/rest/runningBuilds/id:<build_id>/log 
-(curl -v --basic --user <username>:<password> --request POST http://<teamcity.url>/app/rest/runningBuilds/id:<build_id>/log --data <message> --header "Content-Type: text/plain")
+POST /app/rest/builds/id:<build_id>/log 
+(curl -v --basic --user <username>:<password> --request POST http://<teamcity.url>/app/rest/builds/id:<build_id>/log --data <message> --header "Content-Type: text/plain")
 ```
 
 Here, you can send the ["detach"](#Detaching+build+agent) or any other service message as `<message>`.
 
-An example request to detach a build from an agent:
+An example request to send a warning:
 
 ```shell script
-POST /app/rest/runningBuilds/id:TestBuild/log 
-(curl -v --basic --user johnsmith:password1 --request POST http://localhost:8111/app/rest/runningBuilds/id:TestBuild/log --data ##teamcity[detachedFromAgent] --header "Content-Type: text/plain")
+POST /app/rest/builds/id:TestBuild/log 
+(curl -v --basic --user johnsmith:password1 --request POST http://localhost:8111/app/rest/builds/id:TestBuild/log --data "##teamcity[message text='Deployment failed' errorDetails='stack trace' status='ERROR']" --header "Content-Type: text/plain")
 ```
 
 
@@ -61,8 +61,8 @@ To structure service messages in the build log, use [`flow tracking`](service-me
 Use the following call to __finish a build__:
 
 ```shell script
-PUT /app/rest/runningBuilds/id:<build_id>/finishDate
-(curl -v --basic --user <username>:<password> --request PUT http://<teamcity.url>/app/rest/runningBuilds/id:<build_id>/finishDate --data '' --header "Content-Type: text/plain")
+PUT /app/rest/builds/id:<build_id>/finishDate
+(curl -v --basic --user <username>:<password> --request PUT http://<teamcity.url>/app/rest/builds/id:<build_id>/finishDate --data '' --header "Content-Type: text/plain")
 ```
 
 In `--data ''`, you can send the build finish timestamp in the `yyyyMMdd'T'HHmmssZ` format. Leave the value empty to use the current time.
