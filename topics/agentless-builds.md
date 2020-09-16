@@ -32,8 +32,8 @@ To perform requests, you need to use [build-level authentication](artifact-depen
 * `%system.teamcity.auth.password%`
 
 You also need to specify the [build ID](working-with-build-results.md#Internal+Build+ID) and server URL:
-* `%system.teamcity.build.id%`
-* `%system.teamcity.serverUrl%`
+* `%teamcity.build.id%`
+* `%teamcity.serverUrl%`
 
 Use the following call to __log messages__:
 
