@@ -1,9 +1,19 @@
 [//]: # (title: Python)
 [//]: # (auxiliary-id: Python)
 
-The Python build runner automatically detects Pythons on agents and allows running Python scripts in different operating systems.
+The Python build runner automatically detects Python on agents and allows running Python scripts on Windows, Linux, and macOS.
+
+>Since TeamCity 2020.2, this bundled runner replaces the obsolete [Python Runner plugin](https://plugins.jetbrains.com/plugin/9042-python-runner). The new runner offers support for virtual environments, Docker, TeamCity Kotlin DSL, and provide more extra features like test coverage.
 
 Refer to [Configuring Build Steps](configuring-build-steps.md) for a description of common build steps' settings. Refer to [Docker Wrapper](docker-wrapper.md) to learn how you can run this step inside a Docker container.
+
+## Python autodetection
+
+The Python runner automatically detects Python versions installed on a [build agent](build-agent.md).
+
+On Windows, it checks (1) the default install paths, (2) the system register, (3) the `PATH` variable. On Linux and macOS, it checks (1) the default install paths, (2) the `PATH` variable.
+
+The runner sets the first detected versions of Python 2.x and 3.x as the agent's configuration parameters.
 
 ## Command settings
 
@@ -27,7 +37,7 @@ Description
 
 <td>
 
-Example
+Example input
 
 </td>
 
@@ -65,7 +75,7 @@ Module
 
 <td>
 
-Runs a Python [module](https://docs.python.org/3/tutorial/modules.html) via the provided path.
+Runs a Python [module](https://docs.python.org/3/tutorial/modules.html) via the provided path or name (equally to adding `-m` before the module name).
 
 </td>
 
@@ -214,11 +224,15 @@ Arguments
 
 <td>
 
+Arguments of the interpreter applied in each Python run (for example, `python3 arg1 arg2`).
+
+If the step is launched in a virtual environment, these arguments are applied to the `python` command inside the environment (for example, `python3 -m pipenv run python arg1 arg2`).
 
 </td>
 
 <td>
 
+`arg1 arg2`
 
 </td>
 
