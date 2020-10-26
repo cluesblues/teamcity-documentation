@@ -3,7 +3,7 @@
 
 The Python build runner automatically detects Python on agents and allows running Python scripts on Windows, Linux, and macOS.
 
->Since TeamCity 2020.2, this bundled runner replaces the obsolete [Python Runner plugin](https://plugins.jetbrains.com/plugin/9042-python-runner). The new runner offers support for virtual environments, Docker, TeamCity Kotlin DSL, and provide more extra features like test coverage.
+>Since TeamCity 2020.2, this bundled runner replaces the obsolete [Python Runner plugin](https://plugins.jetbrains.com/plugin/9042-python-runner). The new runner offers support for virtual environments, Docker, TeamCity Kotlin DSL, and provides more extra features like test coverage.
 
 Refer to [Configuring Build Steps](configuring-build-steps.md) for a description of common build steps' settings. Refer to [Docker Wrapper](docker-wrapper.md) to learn how you can run this step inside a Docker container.
 
@@ -75,13 +75,13 @@ Module
 
 <td>
 
-Runs a Python [module](https://docs.python.org/3/tutorial/modules.html) via the provided path or name (equally to adding `-m` before the module name).
+Runs a Python [module](https://docs.python.org/3/tutorial/modules.html) via the provided name (equally to adding `-m` before the module name).
 
 </td>
 
 <td>
 
-`scripts/module1.py`
+`example-module`
 
 </td>
 
@@ -130,13 +130,13 @@ Unittest
 
 Launch the [unittest](https://docs.python.org/3/library/unittest.html) framework.
 
-You can specify a path to the unit test file in the additional arguments.
+To filter the scope of processed files, you can specify a path to the unit test files in the additional arguments.
 
 </td>
 
 <td>
 
-Enter `tests/*.py` as an argument to launch all Python files in the `tests` directory via the unittest framework.
+Optionally, enter `tests/*.py` as an argument to launch all Python files in the `tests` directory via the unittest framework.
 
 </td>
 
@@ -154,13 +154,13 @@ Pytest
 
 Launch the [pytest](https://docs.pytest.org/en/stable/index.html) framework.
 
-You can specify a path to the pytest file in the additional arguments.
+To filter the scope of processed files, you can specify a path to the pytest file in the additional arguments.
 
 </td>
 
 <td>
 
-Enter `tests/*.py` as an argument to launch all Python files in the `tests` directory via the pytest framework.
+Optionally, enter `tests/*.py` as an argument to launch all Python files in the `tests` directory via the pytest framework.
 
 </td>
 
@@ -178,13 +178,13 @@ Flake8
 
 Launch the [Flake8](https://pypi.org/project/flake8/) wrapper.
 
-You can specify a path to the Python file in the additional arguments.
+To filter the scope of processed files, you can specify a path to the Python file in the additional arguments.
 
 </td>
 
 <td>
 
-Enter `docs\conf.py` as an argument to check the `conf.py` file for errors.
+Optionally, enter `docs\conf.py` as an argument to check the `conf.py` file for errors.
 
 </td>
 
@@ -202,13 +202,13 @@ Pylint
 
 Launch the [Pylint](https://pypi.org/project/pylint/) tool.
 
-You can specify a path to the Python file in the additional arguments.
+To filter the scope of processed files, you can specify a path to the Python file in the additional arguments.
 
 </td>
 
 <td>
 
-Enter `scripts\*.py` as an argument to check all Python files in the `scripts` directory for errors.
+Optionally, enter `scripts\*.py` as an argument to check all Python files in the `scripts` directory for errors.
 
 </td>
 
@@ -224,7 +224,7 @@ Arguments
 
 <td>
 
-Arguments of the interpreter applied in each Python run (for example, `python3 arg1 arg2`).
+Arguments of the Python interpreter (for example, `python3 arg1 arg2`). Use this command if you want to enter a custom set of arguments.
 
 If the step is launched in a virtual environment, these arguments are applied to the `python` command inside the environment (for example, `python3 -m pipenv run python arg1 arg2`).
 
@@ -321,7 +321,7 @@ Python arguments
 
 </td><td>
 
-Arguments that will be passed to the interpreter for the main command run only before the module or script call: for example, `-m {module}`.
+Arguments that will be passed to the Python interpreter if a custom command is selected.
 
 </td></tr>
 
@@ -330,7 +330,7 @@ Arguments that will be passed to the interpreter for the main command run only b
 
 ## Python executable settings
 
-In this block of settings, you can choose a Python version to run. TeamCity can autodetect an installed 2.x or 3.x version, or you can enter a custom path to the Python executable. You can also specify arguments that will be passed to the interpreter in every Python run of this build step (for example, the environment tool run or reporting runs).
+In this block of settings, you can choose a Python version to run. TeamCity can autodetect an installed 2.x or 3.x version, or you can enter a custom path to the Python executable. You can also specify arguments that will be passed to the interpreter in every Python run of this build step (for example, the environment tool run or reporting run).
 
 ## Environment tool settings
 
